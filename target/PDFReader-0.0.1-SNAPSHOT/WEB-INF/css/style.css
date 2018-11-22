@@ -1,0 +1,23 @@
+.upload-form{
+    text-align: center;
+}
+
+.btn-upload{
+    background-color: rgb(255, 92, 103);
+    color: #fff;
+}
+
+.btn-upload:hover{
+    background-color: rgb(216, 78, 87);
+    transition-duration: .5s;
+}
+
+.pdf-title{
+    color: rgb(85, 85, 85);
+    opacity: 0.75;
+    font-weight: 600;
+}
+
+.form-image{
+    opacity: 0.6;
+}
