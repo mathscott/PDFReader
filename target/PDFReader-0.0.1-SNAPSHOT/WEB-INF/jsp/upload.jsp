@@ -30,7 +30,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <form class="upload-form" method="POST" action="/showPDFFile" enctype="multipart/form-data">
+    <form class="upload-form" method="POST" action="/showXmlFile" enctype="multipart/form-data">
         <h3 class="pdf-title">Escolha o arquivo .pdf aqui</h3>
         <input class="d-block mt-3" type="number" name="x" />
         <input class="d-block mt-3" type="number" name="y" />

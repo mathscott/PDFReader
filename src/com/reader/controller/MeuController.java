@@ -50,7 +50,7 @@ public class MeuController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/showPDFFile", method = RequestMethod.POST)
+	@RequestMapping(value = "/showXmlFile", method = RequestMethod.POST)
 	public @ResponseBody void downloadA(RetanguloPDF retanguloPDF, HttpServletResponse response, @RequestParam("file") MultipartFile mFile) throws IOException {
 		File convFile = new File( mFile.getOriginalFilename());
 		mFile.transferTo(convFile);
@@ -62,7 +62,8 @@ public class MeuController {
 		PDFTextStripperByArea pdfTextStripperByArea = retanguloPDF.parse("/home/matheus/Documentos/sample.pdf");
 		arquivoXML.criarXML(pdfTextStripperByArea);
 
-		FileInputStream inputStream = new FileInputStream(convFile);
+		File xmlFile = new File("/home/matheus/Documentos/data.xml");
+		FileInputStream inputStream = new FileInputStream(xmlFile);
 		byte[] buffer = new byte[8192];
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
@@ -71,8 +72,8 @@ public class MeuController {
 		{
 			baos.write(buffer, 0, bytesRead);
 		}
-		response.setHeader("Content-Disposition","inline; filename=\""+mFile.getName()+"\"");
-		response.setContentType("application/pdf");
+		response.setHeader("Content-Disposition","inline; filename=\""+xmlFile.getName()+"\"");
+		response.setContentType("text/xml");
 		ServletOutputStream outputStream = response.getOutputStream();
 		baos.writeTo(outputStream);
 		outputStream.flush();

@@ -1,4 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +32,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <form class="upload-form" method="POST" action="/showPDFFile" enctype="multipart/form-data">
+    <form class="upload-form" method="POST" action="/showXmlFile" enctype="multipart/form-data">
         <h3 class="pdf-title">Escolha o arquivo .pdf aqui</h3>
         <input class="d-block mt-3" type="number" name="x" />
         <input class="d-block mt-3" type="number" name="y" />
@@ -40,6 +42,8 @@
         <input  class="mt-3  btn-file " type="file" name="file">
         <input class="mt-3 btn btn-upload" type="submit" value="Upload">
     </form>
+
+
 </div>
 </body>
 </html>
